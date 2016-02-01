@@ -1,16 +1,15 @@
 Name:           ocaml-netlink
 Version:        0.2.1
-Release:        1
+Release:        1%{?dist}
 Summary:        OCaml bindings to libnl
 License:        LGPL
 URL:            https://github.com/xapi-project/ocaml-netlink
-Source0:        https://github.com/xapi-project/ocaml-netlink/archive/v%{version}/ocaml-netlink-%{version}.tar.gz
+Source0:        https://github.com/xapi-project/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:  libffi-devel
 BuildRequires:  libnl3
 BuildRequires:  ocaml
 BuildRequires:  ocaml-ctypes-devel
 BuildRequires:  ocaml-findlib
-BuildRequires:  ocaml-obuild
 
 %description
 The Netlink Protocol Library Suite (libnl) provides APIs to the netlink
