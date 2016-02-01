@@ -1,7 +1,6 @@
+Name:           forkexecd
 Version:        0.9.2
 Release:        1%{?dist}
-
-Name:           forkexecd
 Summary:        A subprocess management service
 License:        LGPL
 URL:            https://github.com/xapi-project/forkexecd
