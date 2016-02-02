@@ -19,6 +19,7 @@ ocaml: buildrpms /output/ocaml/SOURCES/MANIFEST
 	mv -f /tmp/MANIFEST $@
 
 buildrpms:
+	cp pins.disabled pins
 	make -f Makefile
 	cp -r _build/RPMS /output/ocaml/
 	rm -rf /output/ocaml/RPMS/x86_64/*.src.rpm
