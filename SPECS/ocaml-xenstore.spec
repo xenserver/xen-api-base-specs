@@ -1,12 +1,12 @@
 %global debug_package %{nil}
 
 Name:           ocaml-xenstore
-Version:        1.2.4
-Release:        2%{?dist}
+Version:        1.3.0
+Release:        1%{?dist}
 Summary:        Xenstore protocol implementation in OCaml
 License:        LGPL
 URL:            https://github.com/mirage/ocaml-xenstore
-Source0:        https://github.com/mirage/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/mirage/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:  ocaml
 BuildRequires:  ocaml-camlp4-devel
 BuildRequires:  ocaml-cstruct-devel
@@ -59,6 +59,17 @@ make install
 %{_libdir}/ocaml/xenstore/*.mli
 
 %changelog
+* Mon Mar 14 2016 Euan Harris <euan.harris@citrix.com> - 1.3.0-1
+- Add EEXIST exception to the interface
+- Allow Ocaml xenstore clients to receive oversized replies from xenstored
+- Return the task for a wait asynchronously
+- Increase maximum incoming watch limit from 1024 to 65536
+- Don't leak watch strings in clients
+- Add opam file
+- Ensure errors from wait functions aren't lost
+- Fix a non-tail call in the dispatcher
+- Switch to ppx from camlp4
+
 * Mon Jun  2 2014 Euan Harris <euan.harris@citrix.com> - 1.2.4-2
 - Split files correctly between base and devel packages
 
