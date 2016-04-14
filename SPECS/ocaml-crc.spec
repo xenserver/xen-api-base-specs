@@ -42,6 +42,7 @@ export OCAMLFIND_LDCONF=%{buildroot}%{_libdir}/ocaml/ld.conf
 ocaml setup.ml -install
 
 %files
+%{_libdir}/ocaml/crc
 %{_libdir}/ocaml/crc/META
 %{_libdir}/ocaml/crc/crc.cma
 %{_libdir}/ocaml/crc/crc.cmi
@@ -55,6 +56,9 @@ ocaml setup.ml -install
 %{_libdir}/ocaml/crc/crc.cmxs
 %{_libdir}/ocaml/crc/crc.mli
 %{_libdir}/ocaml/crc/libcrc_stubs.a
+%{_libdir}/ocaml/crc/crc.cmt
+%{_libdir}/ocaml/crc/crc.cmti
+%{_libdir}/ocaml/crc/crc.annot
 
 %changelog
 * Wed Apr 13 2016 Si Beaumont <simon.beaumont@citrix.com> - 1.0.0-1
