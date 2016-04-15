@@ -7,9 +7,6 @@
   "SPECS/message-switch.spec": {
     "0": "/repos/message-switch#HEAD"
   },
-  "SPECS/ocaml-opasswd.spec": {
-    "0": "/repos/ocaml-opasswd#HEAD"
-  },
   "SPECS/ocaml-shared-block-ring.spec": {
     "0": "/repos/shared-block-ring#HEAD"
   },
