@@ -10,9 +10,6 @@
   "SPECS/ocaml-xcp-idl.spec": {
     "0": "/repos/xcp-idl#HEAD"
   },
-  "SPECS/ocaml-xcp-inventory.spec": {
-    "0": "/repos/xcp-inventory#HEAD"
-  },
   "SPECS/ocaml-xcp-rrd.spec": {
     "0": "/repos/xcp-rrd#HEAD"
   },
