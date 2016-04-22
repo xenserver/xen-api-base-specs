@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name:           ocaml-crc
-Version:        1.0.0
+Version:        0.9.9
 Release:        1%{?dist}
 Summary:        CRC implementation for OCaml
 License:        ISC
@@ -61,8 +61,8 @@ ocaml setup.ml -install
 %{_libdir}/ocaml/crc/crc.annot
 
 %changelog
-* Wed Apr 13 2016 Si Beaumont <simon.beaumont@citrix.com> - 1.0.0-1
-- Update to 1.0.0
+* Fri Apr 22 2016 Si Beaumont <simon.beaumont@citrix.com> - 0.9.9-1
+- Update to 0.9.9
 
 * Sat Apr 26 2014 David Scott <dave.scott@citrix.com> - 0.9.1-1
 - Update to 0.9.1
