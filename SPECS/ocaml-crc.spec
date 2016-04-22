@@ -47,6 +47,9 @@ ocaml setup.ml -install
 %{_libdir}/ocaml/crc/crc.cma
 %{_libdir}/ocaml/crc/crc.cmi
 %{_libdir}/ocaml/crc/dllcrc_stubs.so
+%exclude  %{_libdir}/ocaml/crc/*.annot
+%exclude  %{_libdir}/ocaml/crc/*.cmt
+%exclude  %{_libdir}/ocaml/crc/*.cmti
 
 %files devel
 %doc ChangeLog README.md
