@@ -51,6 +51,9 @@ ocaml setup.ml -install
 %files devel
 %doc ChangeLog README.md
 %{_libdir}/ocaml/crc/crc.a
+%{_libdir}/ocaml/crc/crc.annot
+%{_libdir}/ocaml/crc/crc.cmt
+%{_libdir}/ocaml/crc/crc.cmti
 %{_libdir}/ocaml/crc/crc.cmx
 %{_libdir}/ocaml/crc/crc.cmxa
 %{_libdir}/ocaml/crc/crc.cmxs
