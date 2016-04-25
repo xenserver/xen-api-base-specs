@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 
 Name:           ocaml-crc
-Version:        0.9.1
+Version:        0.9.9
 Release:        1%{?dist}
 Summary:        CRC implementation for OCaml
 License:        ISC
@@ -43,6 +43,7 @@ export OCAMLFIND_LDCONF=%{buildroot}%{_libdir}/ocaml/ld.conf
 ocaml setup.ml -install
 
 %files
+%{_libdir}/ocaml/crc
 %{_libdir}/ocaml/crc/META
 %{_libdir}/ocaml/crc/crc.cma
 %{_libdir}/ocaml/crc/crc.cmi
@@ -59,8 +60,14 @@ ocaml setup.ml -install
 %{_libdir}/ocaml/crc/crc.cmxs
 %{_libdir}/ocaml/crc/crc.mli
 %{_libdir}/ocaml/crc/libcrc_stubs.a
+%{_libdir}/ocaml/crc/crc.cmt
+%{_libdir}/ocaml/crc/crc.cmti
+%{_libdir}/ocaml/crc/crc.annot
 
 %changelog
+* Fri Apr 22 2016 Si Beaumont <simon.beaumont@citrix.com> - 0.9.9-1
+- Update to 0.9.9
+
 * Sat Apr 26 2014 David Scott <dave.scott@citrix.com> - 0.9.1-1
 - Update to 0.9.1
 
