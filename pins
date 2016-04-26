@@ -7,6 +7,9 @@
   "SPECS/message-switch.spec": {
     "0": "/repos/message-switch#HEAD"
   },
+  "SPECS/ocaml-xcp-idl.spec": {
+    "0": "/repos/xcp-idl#HEAD"
+  },
   "SPECS/ocaml-tar.spec": {
     "0": "/repos/ocaml-tar#HEAD"
   },
