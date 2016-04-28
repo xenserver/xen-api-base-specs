@@ -10,9 +10,6 @@
   "SPECS/ocaml-xcp-idl.spec": {
     "0": "/repos/xcp-idl#HEAD"
   },
-  "SPECS/ocaml-tar.spec": {
-    "0": "/repos/ocaml-tar#HEAD"
-  },
   "SPECS/ocaml-xen-api-client.spec": {
     "0": "/repos/xen-api-client#HEAD"
   },
