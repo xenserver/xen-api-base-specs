@@ -1,10 +1,10 @@
 Name:           ocaml-tar
-Version:        0.2.1
-Release:        2%{?dist}
+Version:        0.4.2
+Release:        1%{?dist}
 Summary:        OCaml parser and printer for tar-format data
 License:        LGPL2.1 + OCaml linking exception
-URL:            https://github.com/djs55/ocaml-tar
-Source0:        https://github.com/djs55/%{name}/archive/%{version}/%{name}-%{version}.tar.gz 
+URL:            https://github.com/mirage/ocaml-tar
+Source0:        https://github.com/mirage/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz 
 BuildRequires:  ocaml
 BuildRequires:  ocaml-findlib
 BuildRequires:  ocaml-ounit-devel
@@ -12,6 +12,7 @@ BuildRequires:  ocaml-cstruct-devel
 BuildRequires:  ocaml-lwt-devel
 BuildRequires:  ocaml-re-devel
 BuildRequires:  ocaml-camlp4-devel
+BuildRequires:  ocaml-mirage-types-devel
 
 %description
 This is a pure OCaml library for reading and writing tar-format data.
@@ -31,7 +32,7 @@ developing applications that use %{name}.
 %setup -q
 
 %build
-ocaml setup.ml -configure --destdir %{buildroot}%{_libdir}/ocaml
+ocaml setup.ml -configure --destdir %{buildroot}%{_libdir}/ocaml --disable-mirage
 ocaml setup.ml -build
 
 %install
@@ -55,6 +56,9 @@ ocaml setup.ml -install
 %{_libdir}/ocaml/tar/*.mli
 
 %changelog
+* Thu Apr 28 2016 Euan Harris <euan.harris@citrix.com> - 0.4.2-1
+- Update to 0.4.2
+
 * Fri May 30 2014 Euan Harris <euan.harris@citrix.com> - 0.2.1-2
 - Split files correctly between base and devel packages
 
