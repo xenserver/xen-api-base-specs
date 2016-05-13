@@ -1,5 +1,5 @@
 Name:           xapi-test-utils
-Version:        0.9.0
+Version:        1.0.0
 Release:        1%{?dist}
 Summary:        An OCaml package with modules for easy unit testing
 License:        LGPL+linking exception
@@ -28,8 +28,8 @@ developing applications that use %{name}.
 make
 
 %install
-mkdir -p %{buildroot}/%{_libdir}
-make install DESTDIR=%{buildroot}/%{_libdir}/ocaml
+mkdir -p %{buildroot}%{_libdir}
+make install DESTDIR=%{buildroot}%{_libdir}/ocaml
 
 %files
 %doc README.md
@@ -44,6 +44,5 @@ make install DESTDIR=%{buildroot}/%{_libdir}/ocaml
 %{_libdir}/ocaml/%{name}/*.cmxa
 
 %changelog
-* Thu May 12 2016 Rob Hoes <rob.hoes@citrix.com> - 0.9.0-1
+* Thu May 13 2016 Rob Hoes <rob.hoes@citrix.com> - 1.0.0-1
 - Initial package
-
