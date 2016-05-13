@@ -9,6 +9,7 @@ BuildRequires:  ocaml
 BuildRequires:  ocaml-findlib
 BuildRequires:  ocaml-ounit
 BuildRequires:  oasis
+BuildRequires:  ocaml-stdext-devel
 
 %description
 Helper modules to assist in writing unit tests.
