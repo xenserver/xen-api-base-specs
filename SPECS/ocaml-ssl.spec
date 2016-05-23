@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           ocaml-ssl
-Version:        0.4.6
+Version:        0.4.7
 Release:        2%{?dist}
 Summary:        Use OpenSSL from OCaml
 License:        LGPL
@@ -10,6 +10,8 @@ Source0:        http://downloads.sourceforge.net/project/savonet/%{name}/%{versi
 BuildRequires:  ocaml
 BuildRequires:  ocaml-findlib
 BuildRequires:  openssl-devel
+BuildRequires:  autoconf
+BuildRequires:  automake
 
 %description
 Use OpenSSL from OCaml.
@@ -27,6 +29,7 @@ developing applications that use %{name}.
 %setup -q
 
 %build
+./bootstrap
 ./configure
 make
 
