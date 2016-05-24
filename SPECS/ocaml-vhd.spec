@@ -2,11 +2,12 @@
 
 Name:           ocaml-vhd
 Version:        0.7.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Pure OCaml library for reading, writing, streaming, converting vhd format files
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/djs55/ocaml-vhd
 Source0:        https://github.com/djs55/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
+Patch0:         0001-Change-to-fix-XSO-518.patch
 BuildRequires:  ocaml
 BuildRequires:  ocaml-camlp4-devel
 BuildRequires:  ocaml-cstruct-devel
@@ -45,6 +46,7 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 if [ -x ./configure ]; then
@@ -80,6 +82,11 @@ ocaml setup.ml -install
 
 
 %changelog
+* Tue May 24 2016 Christian Lindig <christian.lindig@citrix.com> - 0.7.3-2
+- Applied patch https://github.com/djs55/ocaml-vhd/pull/33 for
+  runtime support of filesystems without SEEK_DATA support. When lseek
+  fails, it is tried again with SEEK_SET.
+
 * Thu Apr 21 2016 Euan Harris <euan.harris@citrix.com> - 0.7.3-1
 - Update to 0.7.3
 
