@@ -7,8 +7,7 @@ Summary:        Pure OCaml library for reading, writing, streaming, converting v
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/djs55/ocaml-vhd
 Source0:        https://github.com/djs55/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
-Patch0:         0001-Change-to-fix-XSO-518.patch
-Patch1:         0001-CA-210015-retry-if-lseek-2-doesn-t-support-SEEK_DATA.patch
+Patch0:         0001-CA-210015-retry-if-lseek-2-doesn-t-support-SEEK_DATA.patch
 
 BuildRequires:  ocaml
 BuildRequires:  ocaml-camlp4-devel
@@ -48,7 +47,7 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
-%patch1 -p1
+%patch0 -p1
 
 %build
 if [ -x ./configure ]; then
