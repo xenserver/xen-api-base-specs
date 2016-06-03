@@ -31,7 +31,7 @@ developing applications that use %{name}.
 %setup -q -n %{name}-%{version}
 
 %build
-./configure
+./configure --destdir %{buildroot}%{_libdir}/ocaml
 make
 
 %install
