@@ -31,13 +31,13 @@ developing applications that use %{name}.
 %setup -q -n %{name}-%{version}
 
 %build
-./configure
+./configure --destdir %{buildroot}%{_libdir}/ocaml
 make
 
 %install
 mkdir -p %{buildroot}%{_libdir}/ocaml
 export OCAMLFIND_LDCONF=ignore
-export OCAMLFIND_DESTDIR=${buildroot}%{_libdir}/ocaml
+export OCAMLFIND_DESTDIR=%{buildroot}%{_libdir}/ocaml
 make install
 
 %files
