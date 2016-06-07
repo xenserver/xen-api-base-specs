@@ -5,7 +5,7 @@ Summary:        Report code coverage from bisect_ppx runtime files
 License:        MIT
 URL:            https://github.com/lindig/bisect-summary
 Source0:        https://github.com/lindig/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
-BuildRequires:  oasis
+BuildRequires:  oasis-devel
 BuildRequires:  ocaml
 BuildRequires:  ocaml-findlib
 BuildRequires:  ocaml-bisect-ppx-devel
