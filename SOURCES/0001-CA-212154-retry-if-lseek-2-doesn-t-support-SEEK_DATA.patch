@@ -1,18 +1,12 @@
-From 65299b78001caf1c0c22e05b827db4c6be1dc12e Mon Sep 17 00:00:00 2001
+From 7df93e51d0a587634f461d2f9d85bd4138f1aaf4 Mon Sep 17 00:00:00 2001
 From: Christian Lindig <christian.lindig@citrix.com>
-Date: Thu, 26 May 2016 14:16:42 +0100
-Subject: [PATCH] CA-210015 retry if lseek(2) doesn't support SEEK_DATA,
+Date: Fri, 24 Jun 2016 12:10:18 +0100
+Subject: [PATCH] CA-212154 retry if lseek(2) doesn't support SEEK_DATA,
  SEEK_HOLE
 
-This improves a patch from upstream that implemented a retry when
-lseek(2) using SEEK_DATA or SEEK-HOLE failed. Improvement are:
-
-* We keep using #ifdef to make sure to only use SEEK_DATA, SEEK_HOLE
-  when it is defined on a platform.
-
-* We retry when lseek(2) fails only when it is because the file system
-  doesn't support SEEK_DATA or SEEK_HOLE. The previous patch retried
-  irrespective of the reason for failure.
+This commit adds support for file systems that don't support lseek(..,
+SEEK_HOLE) and lseek(,,,, SEEK_DATA). It corrects a bug that was
+introduced with CP-210015.
 
 Signed-off-by: Christian Lindig <christian.lindig@citrix.com>
 ---
@@ -20,7 +14,7 @@ Signed-off-by: Christian Lindig <christian.lindig@citrix.com>
  1 file changed, 7 insertions(+)
 
 diff --git a/lib/lseek64_stubs.c b/lib/lseek64_stubs.c
-index ab7e35b..7fd9db8 100644
+index ab7e35b..4c3c09b 100644
 --- a/lib/lseek64_stubs.c
 +++ b/lib/lseek64_stubs.c
 @@ -17,6 +17,7 @@
@@ -47,7 +41,7 @@ index ab7e35b..7fd9db8 100644
    c_ret = lseek(c_fd, c_ofs, SEEK_HOLE);
 +  /* retry, if SEEK_HOLE not supported on this file system */
 +  if (c_ret == -1 && errno == EINVAL)
-+    c_ret = lseek(c_fd, c_ofs, SEEK_END);
++    c_ret = lseek(c_fd, 0, SEEK_END);
  #else
    /* Set the file pointer to the end of the file; pretend
       there is no hole */
