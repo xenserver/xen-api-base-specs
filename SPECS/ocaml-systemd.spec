@@ -1,8 +1,4 @@
 %global opt %(test -x %{_bindir}/ocamlopt && echo 1 || echo 0)
-%global debug_package %{nil}
-%global _use_internal_dependency_generator 0
-%global __find_requires /usr/lib/rpm/ocaml-find-requires.sh
-%global __find_provides /usr/lib/rpm/ocaml-find-provides.sh
 
 Name:           ocaml-systemd
 Version:        1.1
@@ -26,44 +22,39 @@ Ocaml systemd library bindings
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-Requires:       systemd-devel
+Requires:       systemd-devel%{?_isa}
 
 %description    devel
 The %{name}-devel package contains libraries and signature files for
 developing applications that use %{name}.
 
 %prep
-%setup -q -n ocaml-systemd-%{version}
+%autosetup
 
 %build
 oasis setup
 make
 
 %install
-rm -rf $RPM_BUILD_ROOT
 # These rules work if the library uses 'ocamlfind install' to install itself.
 export DESTDIR=$RPM_BUILD_ROOT
 export OCAMLFIND_DESTDIR=$RPM_BUILD_ROOT%{_libdir}/ocaml
 mkdir -p $OCAMLFIND_DESTDIR $OCAMLFIND_DESTDIR/stublibs
 make install
 
-strip $OCAMLFIND_DESTDIR/stublibs/dll*.so
-chrpath --delete $OCAMLFIND_DESTDIR/stublibs/dll*.so
-
 %files
 %doc README.txt README.md
 %dir %{_libdir}/ocaml/systemd/
+%{_libdir}/ocaml/systemd/META
+%{_libdir}/ocaml/systemd/*.cma
+%{_libdir}/ocaml/systemd/*.cmi
 %if %opt
-%exclude %{_libdir}/ocaml/*/META
-%exclude %{_libdir}/ocaml/*/*.annot
-%exclude %{_libdir}/ocaml/*/*.a
-%exclude %{_libdir}/ocaml/*/*.cmxa
-%exclude %{_libdir}/ocaml/*/*.cmx
-%exclude %{_libdir}/ocaml/*/*.cma
-%exclude %{_libdir}/ocaml/*/*.cmi
-%exclude %{_libdir}/ocaml/*/*.cmt
-%exclude %{_libdir}/ocaml/*/*.cmti
-%exclude %{_libdir}/ocaml/*/*.cmxs
+%exclude %{_libdir}/ocaml/systemd/*.a
+%exclude %{_libdir}/ocaml/systemd/*.cmxa
+%exclude %{_libdir}/ocaml/systemd/*.cmx
+%exclude %{_libdir}/ocaml/systemd/*.cmt
+%exclude %{_libdir}/ocaml/systemd/*.cmti
+%exclude %{_libdir}/ocaml/systemd/*.cmxs
 %endif
 %exclude %{_libdir}/ocaml/*/*.mli
 %{_libdir}/ocaml/stublibs/*.so
@@ -72,16 +63,13 @@ chrpath --delete $OCAMLFIND_DESTDIR/stublibs/dll*.so
 %files devel
 %doc README.txt README.md
 %if %opt
-%{_libdir}/ocaml/*/META
-%{_libdir}/ocaml/*/*.annot
-%{_libdir}/ocaml/*/*.a
-%{_libdir}/ocaml/*/*.cmxa
-%{_libdir}/ocaml/*/*.cmx
-%{_libdir}/ocaml/*/*.cma
-%{_libdir}/ocaml/*/*.cmi
-%{_libdir}/ocaml/*/*.cmt
-%{_libdir}/ocaml/*/*.cmti
-%{_libdir}/ocaml/*/*.cmxs
+%{_libdir}/ocaml/systemd/*.annot
+%{_libdir}/ocaml/systemd/*.a
+%{_libdir}/ocaml/systemd/*.cmxa
+%{_libdir}/ocaml/systemd/*.cmx
+%{_libdir}/ocaml/systemd/*.cmt
+%{_libdir}/ocaml/systemd/*.cmti
+%{_libdir}/ocaml/systemd/*.cmxs
 %endif
 %{_libdir}/ocaml/*/*.mli
 
