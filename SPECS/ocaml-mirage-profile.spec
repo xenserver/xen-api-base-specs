@@ -2,7 +2,7 @@
 
 Name:           ocaml-mirage-profile
 Version:        0.6.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Library for collecting trace data
 License:        BSD-2-clause
 URL:            https://github.com/mirage/mirage-profile/
@@ -45,6 +45,9 @@ make install
 %exclude %{_libdir}/ocaml/mirage-profile/*.cmxa
 %exclude %{_libdir}/ocaml/mirage-profile/*.cmx
 %exclude %{_libdir}/ocaml/mirage-profile/*.mli
+%exclude %{_libdir}/ocaml/mirage-profile/*.annot
+%exclude %{_libdir}/ocaml/mirage-profile/*.cmt
+%exclude %{_libdir}/ocaml/mirage-profile/*.cmti
 
 %files devel
 %{_libdir}/ocaml/mirage-profile/*.a
@@ -53,5 +56,8 @@ make install
 %{_libdir}/ocaml/mirage-profile/*.mli
 
 %changelog
+* Wed Jul 27 2016 Euan Harris <euan.harris@citrix.com> - 0.6.1-2
+- Remove *.cmt, *.cmti and *.annot
+
 * Thu Jan 28 2016 Andrew Cooper <andrew.cooper3@citrix.com> - 0.6.1-1
 - Initial package
