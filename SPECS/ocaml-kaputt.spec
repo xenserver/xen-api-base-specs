@@ -2,7 +2,7 @@
 
 Name:           ocaml-kaputt
 Version:        1.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        OCaml testing tool
 License:        GPL
 URL:            http://kaputt.x9c.fr/
@@ -42,6 +42,9 @@ make install
 %exclude %{_libdir}/ocaml/kaputt/*.a
 %exclude %{_libdir}/ocaml/kaputt/*.cmxa
 %exclude %{_libdir}/ocaml/kaputt/*.cmx
+%exclude %{_libdir}/ocaml/kaputt/*.annot
+%exclude %{_libdir}/ocaml/kaputt/*.cmt
+%exclude %{_libdir}/ocaml/kaputt/*.cmti
 
 %files devel
 %{_libdir}/ocaml/kaputt/*.a
@@ -49,6 +52,9 @@ make install
 %{_libdir}/ocaml/kaputt/*.cmxa
 
 %changelog
+* Wed Jul 27 2016 Euan Harris <euan.harris@citrix.com> - 1.2-2
+- Remove *.cmt, *.cmti and *.annot
+
 * Sun Apr 12 2015 Jon Ludlam <jonathan.ludlam@citrix.com> - 1.2-1
 - Initial package
 

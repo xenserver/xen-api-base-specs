@@ -2,7 +2,7 @@
 
 Name:           ocaml-bitstring
 Version:        2.0.4
-Release:        13%{?dist}
+Release:        14%{?dist}
 Summary:        OCaml library for matching and constructing bitstrings
 License:        LGPLv2+ with exceptions and GPLv2+
 
@@ -105,6 +105,9 @@ install -m 0755 bitstring-objinfo $RPM_BUILD_ROOT%{_bindir}
 %exclude %{_libdir}/ocaml/bitstring/*.cmx
 %endif
 %exclude %{_libdir}/ocaml/bitstring/*.mli
+%exclude %{_libdir}/ocaml/bitstring/*.annot
+%exclude %{_libdir}/ocaml/bitstring/*.cmt
+%exclude %{_libdir}/ocaml/bitstring/*.cmti
 %{_libdir}/ocaml/stublibs/*.so
 %{_libdir}/ocaml/stublibs/*.so.owner
 
@@ -121,6 +124,9 @@ install -m 0755 bitstring-objinfo $RPM_BUILD_ROOT%{_bindir}
 
 
 %changelog
+* Wed Jul 27 2016 Euan Harris <euan.harris@citrix.com> - 2.0.4-14
+- Remove *.cmt, *.cmti and *.annot
+
 * Wed Jun 24 2015 Richard W.M. Jones <rjones@redhat.com> - 2.0.4-13
 - ocaml-4.02.2 final rebuild.
 
