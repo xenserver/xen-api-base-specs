@@ -6,7 +6,7 @@ Summary:        Inotify bindings for OCaml.
 Group:          Development/Libraries
 License:        LGPLv2 with exceptions
 URL:            https://github.com/whitequark/ocaml-inotify
-Source0:        https://github.com/whitequark/ocaml-inotify/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/whitequark/ocaml-inotify/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  ocaml >= 4.02.2
 BuildRequires:  ocaml-ocamldoc
