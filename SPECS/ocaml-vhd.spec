@@ -2,7 +2,7 @@
 
 Name:           ocaml-vhd
 Version:        0.7.3
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Pure OCaml library for reading, writing, streaming, converting vhd format files
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/djs55/ocaml-vhd
@@ -73,6 +73,9 @@ ocaml setup.ml -install
 %exclude %{_libdir}/ocaml/vhd-format/*.cmx
 %exclude %{_libdir}/ocaml/vhd-format/*.ml
 %exclude %{_libdir}/ocaml/vhd-format/*.mli
+%exclude %{_libdir}/ocaml/vhd-format/*.annot
+%exclude %{_libdir}/ocaml/vhd-format/*.cmt
+%exclude %{_libdir}/ocaml/vhd-format/*.cmti
 
 
 %files devel
@@ -83,6 +86,9 @@ ocaml setup.ml -install
 
 
 %changelog
+* Wed Jul 27 2016 Euan Harris <euan.harris@citrix.com> - 0.7.3-5
+- Remove *.cmt, *.cmti and *.annot
+
 * Fri Jun 24 2016 Christian Lindig <christian.lindig@citrix.com> - 0.7.3-4
 - drop the previous patch because it contained a bug: when
   lseek(SEEK_HOLE) is retried, the offset must be 0, not c_ofs.

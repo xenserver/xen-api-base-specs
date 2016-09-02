@@ -2,7 +2,7 @@
 
 Name:           ocaml-getopt
 Version:        20040811
-Release:        1%{?extrarelease}
+Release:        2%{?extrarelease}
 Summary:        Command line parsing a la GNU getopt
 License:        MIT-like
 Group:          Development/Other
@@ -57,6 +57,9 @@ rm -rf %{buildroot}
 %{_libdir}/ocaml/getopt/META
 %{_libdir}/ocaml/getopt/*.cma
 %{_libdir}/ocaml/getopt/*.cmi
+%exclude %{_libdir}/ocaml/getopt/META/*.annot
+%exclude %{_libdir}/ocaml/getopt/META/*.cmt
+%exclude %{_libdir}/ocaml/getopt/META/*.cmti
 
 %files devel
 %defattr(-,root,root)
@@ -70,6 +73,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Jul 27 2016 Euan Harris <euan.harris@citrix.com> - 20040811-2
+- Remove *.cmt, *.cmti and *.annot
+
 * Fri May 14 2010 David Scott <dave.scott@eu.citrix.com>
 - Customise for XCP
 

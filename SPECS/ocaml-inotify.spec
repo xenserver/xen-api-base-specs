@@ -6,7 +6,7 @@ Summary:        Inotify bindings for OCaml.
 Group:          Development/Libraries
 License:        LGPLv2 with exceptions
 URL:            https://github.com/whitequark/ocaml-inotify
-Source0:        https://github.com/whitequark/ocaml-inotify/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        https://github.com/whitequark/ocaml-inotify/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  ocaml >= 4.02.2
 BuildRequires:  ocaml-ocamldoc
@@ -64,6 +64,9 @@ chrpath --delete $OCAMLFIND_DESTDIR/stublibs/dll*.so
 %exclude %{_libdir}/ocaml/inotify/*.a
 %exclude %{_libdir}/ocaml/inotify/*.cmxa
 %exclude %{_libdir}/ocaml/inotify/*.mli
+%exclude %{_libdir}/ocaml/inotify/*.annot
+%exclude %{_libdir}/ocaml/inotify/*.cmt
+%exclude %{_libdir}/ocaml/inotify/*.cmti
 %{_libdir}/ocaml/stublibs/*.so
 %{_libdir}/ocaml/stublibs/*.so.owner
 
@@ -77,6 +80,9 @@ chrpath --delete $OCAMLFIND_DESTDIR/stublibs/dll*.so
 %changelog
 * Thu Aug 25 2016 Christian Lindig <christian.lindig@citrix.com> - 2.3-1
 - Packaged new upstream release
+
+* Wed Jul 27 2016 Euan Harris <euan.harris@citrix.com> - 2.0-2
+- Remove *.cmt, *.cmti and *.annot
 
 * Tue Oct 14 2014 David Scott <dave.scott@citrix.com> - 2.0-1
 - Update to 2.0
