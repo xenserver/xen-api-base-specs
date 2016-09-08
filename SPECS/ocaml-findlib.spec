@@ -20,7 +20,8 @@ BuildRequires:  ocaml >= 4.00.1
 BuildRequires:  ocaml-camlp4-devel
 BuildRequires:  ocaml-compiler-libs
 BuildRequires:  ocaml-ocamldoc
-BuildRequires:  m4, ncurses-devel
+BuildRequires:  m4
+BuildRequires:  ncurses-devel
 BuildRequires:  gawk
 Requires:       ocaml
 
