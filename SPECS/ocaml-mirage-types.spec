@@ -23,8 +23,8 @@ See http://openmirage.org for more information.
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
-BuildRequires:  ocaml-ipaddr-devel%{?_isa}
-BuildRequires:  ocaml-lwt-devel%{?_isa}
+Requires:       ocaml-ipaddr-devel%{?_isa}
+Requires:       ocaml-lwt-devel%{?_isa}
 
 %description    devel
 The %{name}-devel package contains libraries and signature files for

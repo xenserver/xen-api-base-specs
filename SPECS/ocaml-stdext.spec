@@ -21,7 +21,7 @@ Deprecated misc library functions for OCaml.
 Summary:        Development files for %{name}
 Requires:       %{name} = %{version}-%{release}
 Requires:       ocaml-fd-send-recv-devel%{?_isa}
-BuildRequires:  ocaml-uuidm-devel%{?_isa}
+Requires:       ocaml-uuidm-devel%{?_isa}
 Requires:       ocaml-backtrace-devel%{?_isa}
 
 %description    devel
