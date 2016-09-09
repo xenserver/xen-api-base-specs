@@ -2,12 +2,13 @@
 
 Name:           ocaml-vhd
 Version:        0.7.3
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Pure OCaml library for reading, writing, streaming, converting vhd format files
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/djs55/ocaml-vhd
 Source0:        https://github.com/djs55/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
 Patch0:         0001-CA-212154-retry-if-lseek-2-doesn-t-support-SEEK_DATA.patch
+Patch1:         0002-CA-218219-precheck-index-range-before-accessing.patch
 
 BuildRequires:  ocaml
 BuildRequires:  ocaml-camlp4-devel
@@ -48,6 +49,7 @@ developing applications that use %{name}.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 if [ -x ./configure ]; then
