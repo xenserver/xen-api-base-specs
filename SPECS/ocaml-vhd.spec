@@ -1,13 +1,12 @@
 %global debug_package %{nil}
 
 Name:           ocaml-vhd
-Version:        0.7.3
-Release:        5%{?dist}
+Version:        0.7.4
+Release:        1%{?dist}
 Summary:        Pure OCaml library for reading, writing, streaming, converting vhd format files
 License:        LGPL2.1 + OCaml linking exception
 URL:            https://github.com/djs55/ocaml-vhd
 Source0:        https://github.com/djs55/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
-Patch0:         0001-CA-212154-retry-if-lseek-2-doesn-t-support-SEEK_DATA.patch
 
 BuildRequires:  ocaml
 BuildRequires:  ocaml-camlp4-devel
@@ -47,7 +46,6 @@ developing applications that use %{name}.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 if [ -x ./configure ]; then
@@ -86,6 +84,10 @@ ocaml setup.ml -install
 
 
 %changelog
+
+* Tue Sep 13 2016 Zheng Li <zheng.li3@citrix.com> - 0.7.4-1
+- Update to 0.7.4 which contains fixes for CA-212154 and CA-218219
+
 * Wed Jul 27 2016 Euan Harris <euan.harris@citrix.com> - 0.7.3-5
 - Remove *.cmt, *.cmti and *.annot
 
