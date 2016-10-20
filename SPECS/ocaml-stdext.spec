@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           ocaml-stdext
-Version:        2.0.0
+Version:        2.1.0
 Release:        1%{?dist}
 Summary:        Deprecated misc library functions for OCaml
 License:        LGPL
@@ -60,6 +60,9 @@ make install DESTDIR=${buildroot}
 %{_libdir}/ocaml/stdext/*.mli
 
 %changelog
+* Thu Oct 20 2016 Marcello Seri <marcello.seri@citrix.com> - 2.1.0-1
+- Update to 2.1.0
+
 * Wed Jun 22 2016 Jon Ludlam <jonathan.ludlam@citrix.com> - 2.0.0-1
 - Update to 2.0.0
 
