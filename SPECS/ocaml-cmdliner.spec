@@ -1,6 +1,6 @@
 Name:           ocaml-cmdliner
 Version:        0.9.5
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Declarative definition of commandline interfaces for OCaml
 License:        BSD3
 URL:            http://erratique.ch/software/cmdliner
@@ -34,9 +34,15 @@ ocaml pkg/git.ml
 ocaml pkg/build.ml native=true native-dynlink=true
 
 %install
-mkdir -p %{buildroot}/%{_libdir}/ocaml/cmdliner
-find .
-cp _build/src/cmdliner.a _build/src/cmdliner.cma _build/src/cmdliner.cmi _build/src/cmdliner.cmx _build/src/cmdliner.cmxa _build/src/cmdliner.cmxs _build/src/cmdliner.mli _build/pkg/META %{buildroot}/%{_libdir}/ocaml/cmdliner
+%__install -d  %{buildroot}/%{_libdir}/ocaml/cmdliner
+%__install _build/src/cmdliner.a     %{buildroot}/%{_libdir}/ocaml/cmdliner
+%__install _build/src/cmdliner.cma   %{buildroot}/%{_libdir}/ocaml/cmdliner
+%__install _build/src/cmdliner.cmi   %{buildroot}/%{_libdir}/ocaml/cmdliner
+%__install _build/src/cmdliner.cmx   %{buildroot}/%{_libdir}/ocaml/cmdliner
+%__install _build/src/cmdliner.cmxa  %{buildroot}/%{_libdir}/ocaml/cmdliner
+%__install _build/src/cmdliner.cmxs  %{buildroot}/%{_libdir}/ocaml/cmdliner
+%__install _build/src/cmdliner.mli   %{buildroot}/%{_libdir}/ocaml/cmdliner
+%__install _build/pkg/META           %{buildroot}/%{_libdir}/ocaml/cmdliner
 
 %files
 %doc CHANGES.md
@@ -57,6 +63,9 @@ cp _build/src/cmdliner.a _build/src/cmdliner.cma _build/src/cmdliner.cmi _build/
 %{_libdir}/ocaml/cmdliner/*.mli
 
 %changelog
+* Mon Oct 24 2016 Christian Lindig <christian.lindig@citrix.com> - 0.9.5-4
+- use install(1) rather than cp(1), mkdir(1) for installation; use RPM macros
+
 * Wed Jul 27 2016 Euan Harris <euan.harris@citrix.com> - 0.9.5-3
 - Remove *.cmt, *.cmti and *.annot
 
