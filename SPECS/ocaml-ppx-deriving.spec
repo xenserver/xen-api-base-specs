@@ -8,11 +8,11 @@ License:        MIT
 URL:            https://github.com/whitequark/ppx_deriving
 Source0:        https://github.com/whitequark/ppx_deriving/archive/v%{version}/%{name}-%{version}.tar.gz
 BuildRequires:  ocaml
-BuildRequires:  ocaml-findlib
-BuildRequires:  cppo
+BuildRequires:  ocaml-findlib-devel
+BuildRequires:  cppo-devel
 BuildRequires:  ocaml-ounit
 BuildRequires:  ocaml-result-devel
-BuildRequires:  ocaml-ppx-tools
+BuildRequires:  ocaml-ppxtools-devel
 
 %description
 deriving is a library simplifying type-driven code generation on OCaml
