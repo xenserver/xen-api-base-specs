@@ -2,7 +2,7 @@
 
 Name:           ocaml-ppx-deriving
 Version:        4.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Type-driven code generation for OCaml >=4.02
 License:        MIT
 URL:            https://github.com/whitequark/ppx_deriving
@@ -36,6 +36,7 @@ make
 
 %install
 %__install -D _build/pkg/META                     %{buildroot}/%{_libdir}/ocaml/ppx_deriving/META
+%__install -D _build/src/ppx_deriving_main.native %{buildroot}/%{_libdir}/ocaml/ppx_deriving/ppx_deriving
 %__install -D _build/src/ppx_deriving.a           %{buildroot}/%{_libdir}/ocaml/ppx_deriving/ppx_deriving.a
 %__install -D _build/src/ppx_deriving.cma         %{buildroot}/%{_libdir}/ocaml/ppx_deriving/ppx_deriving.cma
 %__install -D _build/src/ppx_deriving.cmi         %{buildroot}/%{_libdir}/ocaml/ppx_deriving/ppx_deriving.cmi
@@ -115,6 +116,9 @@ make
 %{_libdir}/ocaml/ppx_deriving/*.mli
 
 %changelog
+* Tue Oct 25 2016 Christian Lindig <christian.lindig@citrix.com> - 4.1-2
+- Include ppx_deriving binary
+
 * Mon Oct 24 2016 Christian Lindig <christian.lindig@citrix.com> - 4.1-1
 - Initial packaging
 
