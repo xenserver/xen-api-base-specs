@@ -1,6 +1,6 @@
 Name:           ocaml-cmdliner
-Version:        0.9.5
-Release:        4%{?dist}
+Version:        0.9.8
+Release:        1%{?dist}
 Summary:        Declarative definition of commandline interfaces for OCaml
 License:        BSD3
 URL:            http://erratique.ch/software/cmdliner
@@ -8,7 +8,7 @@ Source0:        https://github.com/dbuenzli/cmdliner/archive/v%{version}/cmdline
 BuildRequires:  ocaml
 BuildRequires:  ocaml-findlib
 BuildRequires:  ocaml-ocamldoc
-Obsoletes:      cmdliner <= 0.9.5
+Obsoletes:      cmdliner <= 0.9.8
 
 %description
 Cmdliner is an OCaml module for the declarative definition of command line
@@ -63,6 +63,9 @@ ocaml pkg/build.ml native=true native-dynlink=true
 %{_libdir}/ocaml/cmdliner/*.mli
 
 %changelog
+* Tue Oct 25 2016 Christian Lindig <christian.lindig@citrix.com> - 0.9.8-1
+- Update package version
+
 * Mon Oct 24 2016 Christian Lindig <christian.lindig@citrix.com> - 0.9.5-4
 - use install(1) rather than cp(1), mkdir(1) for installation; use RPM macros
 
