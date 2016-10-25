@@ -5,8 +5,8 @@
 %endif
 
 Name:           ocaml-findlib
-Version:        1.5.5
-Release:        2%{?extrarelease}
+Version:        1.6.3
+Release:        1%{?extrarelease}
 Summary:        Objective CAML package manager and build helper
 
 Group:          Development/Libraries
@@ -127,6 +127,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Tue Oct 25 2016 Marcello Seri <marcello.seri@citrix.com> - 1.6.3-1
+- Update to 1.6.3 for findlib.dynload
+
 * Wed Jul 27 2016 Euan Harris <euan.harris@citrix.com> - 1.5.5-2
 - Remove *.cmt, *.cmti and *.annot
 
