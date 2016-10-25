@@ -1,18 +1,25 @@
 %global debug_package %{nil}
 
 Name:           ocaml-rpc
-Version:        1.6.0
+Version:        1.9.2
 Release:        1%{?dist}
 Summary:        An RPC library for OCaml
 License:        LGPL
-URL:            https://github.com/mirage/ocaml-rpc
-Source0:        https://github.com/mirage/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
+URL:            https://github.com/jonludlam/ocaml-rpc
+Source0:        https://github.com/jonludlam/%{name}/archive/v%{version}/%{name}-%{version}.tar.gz
+BuildRequires:  oasis
 BuildRequires:  ocaml
 BuildRequires:  ocaml-camlp4-devel
 BuildRequires:  ocaml-findlib
 BuildRequires:  ocaml-lwt-devel
 BuildRequires:  ocaml-type-conv
 BuildRequires:  ocaml-xmlm-devel
+BuildRequires:  ocaml-cmdliner-devel
+BuildRequires:  ocaml-ppx-deriving-devel
+BuildRequires:  ocaml-ppxtools-devel
+BuildRequires:  ocaml-result-devel
+BuildRequires:  ocaml-rresult-devel
+BuildRequires:  ocaml-async-devel
 
 %description
 Am RPC library for OCaml.
@@ -45,14 +52,32 @@ make install DESTDIR=${buildroot}
 %doc README.md
 %{_libdir}/ocaml/rpclib
 %exclude %{_libdir}/ocaml/rpclib/*.cmx
+%exclude %{_libdir}/ocaml/rpclib/*.cmxa
+%exclude %{_libdir}/ocaml/rpclib/*.cmxs
 %exclude %{_libdir}/ocaml/rpclib/*.annot
 %exclude %{_libdir}/ocaml/rpclib/*.cmt
 %exclude %{_libdir}/ocaml/rpclib/*.cmti
+%{_libdir}/ocaml/ppx_deriving_rpc
+%exclude %{_libdir}/ocaml/ppx_deriving_rpc/*.cmx
+%exclude %{_libdir}/ocaml/ppx_deriving_rpc/*.cmxa
+%exclude %{_libdir}/ocaml/ppx_deriving_rpc/*.cmxs
+%exclude %{_libdir}/ocaml/ppx_deriving_rpc/*.annot
+%exclude %{_libdir}/ocaml/ppx_deriving_rpc/*.cmt
+%exclude %{_libdir}/ocaml/ppx_deriving_rpc/*.cmti
+
 
 %files devel
 %{_libdir}/ocaml/rpclib/*.cmx
+%{_libdir}/ocaml/rpclib/*.cmxa
+%{_libdir}/ocaml/rpclib/*.cmxs
+%{_libdir}/ocaml/ppx_deriving_rpc/*.cmx
+%{_libdir}/ocaml/ppx_deriving_rpc/*.cmxa
+%{_libdir}/ocaml/ppx_deriving_rpc/*.cmxs
 
 %changelog
+* Tue Oct 25 2016 Marcello Seri <marcello.seri@citrix.com> - 1.9.2-1
+- Update to 1.9.2
+
 * Mon Sep 19 2016 Rob Hoes <rob.hoes@citrix.com> - 1.6.0-1
 - Update to 1.6.0
 
