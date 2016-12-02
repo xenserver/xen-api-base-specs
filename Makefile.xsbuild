@@ -7,17 +7,7 @@ RPM_EXTRA_DEFINES=--define "_sourcedir %_topdir/SOURCES/%name"
 
 .PHONY: buildrpms ocaml
 
-ocaml: buildrpms /output/ocaml/SOURCES/MANIFEST 
-
-/output/ocaml/SOURCES/MANIFEST: buildrpms
-	mkdir /output/ocaml/SOURCES
-	for i in $(shell /bin/ls -1 SRPMS/*.rpm); do \
-		path=$${i}; \
-		echo -n "ocaml "; \
-		rpm --qf %{License} -qp $${path} | sed -e 's/ /_/g'; \
-		echo " file $${path}"; \
-	done > /tmp/MANIFEST
-	mv -f /tmp/MANIFEST $@
+ocaml: buildrpms
 
 buildrpms:
 	make -f Makefile
