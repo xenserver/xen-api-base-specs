@@ -1,5 +1,5 @@
 Name:           ocaml-nbd
-Version:        1.0.2
+Version:        1.0.3
 Release:        1%{?dist}
 Summary:        Pure OCaml implementation of the Network Block Device protocol
 License:        LGPL2.1 + OCaml linking exception
@@ -12,6 +12,8 @@ BuildRequires:  ocaml-cmdliner-devel
 BuildRequires:  ocaml-cstruct-devel
 BuildRequires:  ocaml-findlib-devel
 BuildRequires:  ocaml-lwt-devel
+BuildRequires:  ocaml-rpc-devel
+BuildRequires:  ocaml-type-conv
 
 %description
 An implementation of the Network Block Device protocol for both
@@ -59,6 +61,9 @@ make install
 %{_libdir}/ocaml/nbd/*.mli
 
 %changelog
+* Mon Feb 27 2017 Jon Ludlam <jonathan.ludlam@citrix.com> - 1.0.3-1
+- Update to 1.0.3
+
 * Mon Mar 31 2014 Euan Harris <euan.harris@citrix.com> - 1.0.2-1
 - Update to 1.0.2, removing dependency on ocaml-obuild
 
