@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           ocaml-cmdliner
 Version:        0.9.5
 Release:        3%{?dist}
@@ -46,9 +48,6 @@ cp _build/src/cmdliner.a _build/src/cmdliner.cma _build/src/cmdliner.cmi _build/
 %exclude %{_libdir}/ocaml/cmdliner/*.cmxa
 %exclude %{_libdir}/ocaml/cmdliner/*.cmx
 %exclude %{_libdir}/ocaml/cmdliner/*.mli
-%exclude %{_libdir}/ocaml/cmdliner/*.annot
-%exclude %{_libdir}/ocaml/cmdliner/*.cmt
-%exclude %{_libdir}/ocaml/cmdliner/*.cmti
 
 %files devel
 %{_libdir}/ocaml/cmdliner/*.a

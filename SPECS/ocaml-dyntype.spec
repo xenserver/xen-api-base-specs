@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           ocaml-dyntype
 Version:        0.9.0
 Release:        2%{?dist}
@@ -37,9 +39,6 @@ make install
 %{_libdir}/ocaml/dyntype
 %exclude %{_libdir}/ocaml/dyntype/*.a
 %exclude %{_libdir}/ocaml/dyntype/*.cmxa
-%exclude %{_libdir}/ocaml/dyntype/*.annot
-%exclude %{_libdir}/ocaml/dyntype/*.cmt
-%exclude %{_libdir}/ocaml/dyntype/*.cmti
 
 %files devel
 %{_libdir}/ocaml/dyntype/*.a

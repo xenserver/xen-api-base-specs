@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 %define XEN_RELEASE %(test -z "${XEN_RELEASE}" && echo unknown || echo $XEN_RELEASE)
 
 Name:           ocaml-getopt
@@ -59,9 +61,6 @@ rm -rf %{buildroot}
 %{_libdir}/ocaml/getopt/META
 %{_libdir}/ocaml/getopt/*.cma
 %{_libdir}/ocaml/getopt/*.cmi
-%exclude %{_libdir}/ocaml/getopt/META/*.annot
-%exclude %{_libdir}/ocaml/getopt/META/*.cmt
-%exclude %{_libdir}/ocaml/getopt/META/*.cmti
 
 %files devel
 %defattr(-,root,root)
