@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:		ocamlify
 Version:	0.0.2
 Release:	1%{?dist}

@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           ocaml-conduit
 Version:        0.8.2
 Release:        2%{?dist}
@@ -57,7 +59,6 @@ make install
 %exclude %{_libdir}/ocaml/conduit/*.a
 %exclude %{_libdir}/ocaml/conduit/*.cmxa
 %exclude %{_libdir}/ocaml/conduit/*.cmx
-%exclude %{_libdir}/ocaml/conduit/*.annot
 %exclude %{_libdir}/ocaml/conduit/*.cmt
 %exclude %{_libdir}/ocaml/conduit/*.cmti
 

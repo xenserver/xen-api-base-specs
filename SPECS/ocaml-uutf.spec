@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:           ocaml-uutf
 Version:        0.9.3
 Release:        4%{?dist}
@@ -48,9 +50,6 @@ mkdir -p %{buildroot}%{_libdir}/ocaml/uutf
 %{_libdir}/ocaml/uutf/META
 %{_libdir}/ocaml/uutf/uutf.cmi
 %{_libdir}/ocaml/uutf/uutf.cma
-%exclude %{_libdir}/ocaml/uutf/META/*.annot
-%exclude %{_libdir}/ocaml/uutf/META/*.cmt
-%exclude %{_libdir}/ocaml/uutf/META/*.cmti
 
 %files devel
 %{_libdir}/ocaml/uutf/uutf.cmx

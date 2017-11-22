@@ -1,3 +1,5 @@
+%global debug_package %{nil}
+
 Name:		ocamlmod
 Version:	0.0.7
 Release:	1%{?dist}
